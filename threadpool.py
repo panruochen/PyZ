@@ -59,8 +59,6 @@ class _WorkerThread (threading.Thread):
                 self.gtc.tasks_lock.release()
                 if args is None:
                     break
-                if len(args) != 2 or (args[1] != True and args[1] != False):
-                    raise Exception("Bad args")
                 status = self.thread_function(args)
 
             self.gtc.threads_lock.acquire()
